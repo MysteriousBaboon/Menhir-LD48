@@ -8,15 +8,17 @@ public class menhir_map : MonoBehaviour
 	public GameObject c2;
 	public GameObject c3;
 
+	public GameObject menhir;
+
 	caillou1 s1;
 	caillou1 s2;
 	caillou1 s3;
 
+	ChangeSpriteFromSheet m;
 
-	int[] good_combinaison = {1, 2, 3};
+	int[] good_combinaison = {1, 3, 1, 2, 3, 3};
 	int good_combinaison_count = 0;
 	bool victory = false;
-
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +26,7 @@ public class menhir_map : MonoBehaviour
     	s1 = c1.GetComponent<caillou1>();
 		s2 = c2.GetComponent<caillou1>();
 		s3 = c3.GetComponent<caillou1>();
+		m = menhir.GetComponent<ChangeSpriteFromSheet>();
     }
 
     // Update is called once per frame
@@ -33,7 +36,7 @@ public class menhir_map : MonoBehaviour
     	{
     		print("WP");
     	}
-    	if (!victory)
+    	else if (!victory)
     	{
     		if (Input.GetKeyDown("left"))
     		{
@@ -47,48 +50,43 @@ public class menhir_map : MonoBehaviour
     		{
     			click_caillou(s3, 3);
     		}
+    		update_menhir();
     	}
     }
 
-    /*
-    void click_caillou(int id)
+    void update_menhir()
     {
-    	if (!s1.m_MyAudioSource.isPlaying)
-        {
-
-        }
-    	if (id == 1)
+    	print(good_combinaison_count);
+    	int wanted = good_combinaison_count / 2;
+    	if (good_combinaison_count == good_combinaison.Length)
     	{
-    		s1.PlaySong();
+    		wanted = 3;
     	}
-    	else if (id == 2)
-    	{
-    		s2.PlaySong();
-    	}
-    	else if (id == 3)
-    	{
-    		s3.PlaySong();
-    	}
-    	
+    	if (m.actif != wanted)
+		{
+			m.ChangeSprite(wanted);
+		}
     }
-    */
+
     void click_caillou(caillou1 s, int id)
     {
-    	if (!s1.m_MyAudioSource.isPlaying)
-    	{
-    		s.PlaySong();
-    		if (good_combinaison[good_combinaison_count] == id)
-	        {
-	        	good_combinaison_count += 1;
-	        }
-	        else
-	        {
-	        	good_combinaison_count = 0;
-	        }
-	        if (good_combinaison_count == good_combinaison.Length)
-	        {
-	        	victory = true;
-	        }
-    	}
+    	//if (!s.m_MyAudioSource.isPlaying)
+
+    	//s.StartAnim();
+
+    	s.PlaySong();
+
+		if (good_combinaison[good_combinaison_count] == id)
+        {
+        	good_combinaison_count += 1;
+        }
+        else
+        {
+        	good_combinaison_count = 0;
+        }
+        if (good_combinaison_count == good_combinaison.Length)
+        {
+        	victory = true;
+        }
     }
 }
