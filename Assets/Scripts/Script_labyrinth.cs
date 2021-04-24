@@ -5,6 +5,7 @@ using UnityEngine;
 public class Script_labyrinth : MonoBehaviour
 {
     public  GameObject[] cells;
+    public int max_cells;
     private int i = 0;
 
     // Start is called before the first frame update
@@ -15,10 +16,11 @@ public class Script_labyrinth : MonoBehaviour
             cells[i].GetComponent<SpriteRenderer>().color = color;
 
             i++;
-            
+
             Color color2 = cells[i].GetComponent<SpriteRenderer>().color;
             color2.a = 1f;
             cells[i].GetComponent<SpriteRenderer>().color = color2;
+
     }
 
     void Start()
