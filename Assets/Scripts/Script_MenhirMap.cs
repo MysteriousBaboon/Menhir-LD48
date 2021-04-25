@@ -8,6 +8,10 @@ public class Script_MenhirMap : MonoBehaviour
 	public GameObject c2;
 	public GameObject c3;
 
+    public GameObject cr1;
+    public GameObject cr2;
+    public GameObject cr3;
+
 	public GameObject menhir;
 
 	Script_Rock s1;
@@ -27,6 +31,9 @@ public class Script_MenhirMap : MonoBehaviour
 		s2 = c2.GetComponent<Script_Rock>();
 		s3 = c3.GetComponent<Script_Rock>();
 		m = menhir.GetComponent<Script_Menhir>();
+        cr1.SetActive(false);
+        cr2.SetActive(false);
+        cr3.SetActive(false);
     }
 
     // Update is called once per frame
@@ -70,7 +77,6 @@ public class Script_MenhirMap : MonoBehaviour
     void click_caillou(Script_Rock s, int id)
     {
     	//if (!s.m_MyAudioSource.isPlaying)
-
     	s.StartAnim();
 
     	s.PlaySong();
@@ -78,10 +84,16 @@ public class Script_MenhirMap : MonoBehaviour
 		if (good_combinaison[good_combinaison_count] == id)
         {
         	good_combinaison_count += 1;
+            cr1.SetActive(false);
+            cr2.SetActive(false);
+            cr3.SetActive(false);
         }
         else
         {
         	good_combinaison_count = 0;
+            cr1.SetActive(true);
+            cr2.SetActive(true);
+            cr3.SetActive(true);
         }
         if (good_combinaison_count == good_combinaison.Length)
         {
@@ -92,17 +104,20 @@ public class Script_MenhirMap : MonoBehaviour
 
     public void	caillou_got_click(int id)
     {
-    	if (id == 1)
-    	{
-	    	click_caillou(s1, 1);
-    	}
-    	else if (id == 2)
-    	{
-	    	click_caillou(s2, 2);
-    	}
-    	else if (id == 3)
-    	{
-	    	click_caillou(s3, 3);
-    	}
+        if (!victory)
+        {
+            if (id == 1)
+            {
+            	   click_caillou(s1, 1);
+            }
+            else if (id == 2)
+            {
+               click_caillou(s2, 2);
+            }
+            else if (id == 3)
+            {
+              click_caillou(s3, 3);
+            }
+        }
     }
 }
