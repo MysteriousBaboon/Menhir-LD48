@@ -89,4 +89,20 @@ public class menhir_map : MonoBehaviour
         	victory = true;
         }
     }
+
+    public void	caillou_got_click(int id)
+    {
+    	if (id == 1)
+    	{
+	    	click_caillou(s1, 1);
+    	}
+    	else if (id == 2)
+    	{
+	    	click_caillou(s2, 2);
+    	}
+    	else if (id == 3)
+    	{
+	    	click_caillou(s3, 3);
+    	}
+    }
 }
