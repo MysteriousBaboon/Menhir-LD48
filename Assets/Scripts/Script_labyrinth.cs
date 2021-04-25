@@ -9,18 +9,19 @@ public class Script_labyrinth : MonoBehaviour
     private int i = 0;
 
     // Start is called before the first frame update
-    void Move()
+    void Move() 
     {
             Color color = cells[i].GetComponent<SpriteRenderer>().color;
             color.a = 0f;
             cells[i].GetComponent<SpriteRenderer>().color = color;
 
             i++;
-
+            if(max_cells > i)
+            {
             Color color2 = cells[i].GetComponent<SpriteRenderer>().color;
             color2.a = 1f;
             cells[i].GetComponent<SpriteRenderer>().color = color2;
-
+            }
     }
 
     void Start()
