@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class Script_MenhirMap : MonoBehaviour
 {
@@ -13,6 +15,8 @@ public class Script_MenhirMap : MonoBehaviour
     public GameObject cr3;
 
 	public GameObject menhir;
+
+    public string levelName;
 
 	Script_Rock s1;
 	Script_Rock s2;
@@ -39,9 +43,9 @@ public class Script_MenhirMap : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-    	if (victory)
+    	if (victory & !s1.m_MyAudioSource.isPlaying & !s2.m_MyAudioSource.isPlaying & !s3.m_MyAudioSource.isPlaying)
     	{
-    		print("WP");
+            SceneManager.LoadScene(levelName);
     	}
     	else if (!victory)
     	{

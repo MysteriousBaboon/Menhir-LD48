@@ -1178,6 +1178,7 @@ MonoBehaviour:
   cr2: {fileID: 224849767}
   cr3: {fileID: 1575638617}
   menhir: {fileID: 674034902}
+  levelName: Scene_Chest
 --- !u!212 &815321999
 SpriteRenderer:
   m_ObjectHideFlags: 0
