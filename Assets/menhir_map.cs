@@ -72,7 +72,7 @@ public class menhir_map : MonoBehaviour
     {
     	//if (!s.m_MyAudioSource.isPlaying)
 
-    	//s.StartAnim();
+    	s.StartAnim();
 
     	s.PlaySong();
 
