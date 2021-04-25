@@ -6,23 +6,30 @@ public class caillou1 : MonoBehaviour
 {
 	public AudioSource m_MyAudioSource;
 	private Animation anim;
+	public int pierre_id;
+
+
+	public GameObject menhir_map;
+
+	menhir_map script;
 
     // Start is called before the first frame update
     void Start()
     {
     	m_MyAudioSource = GetComponent<AudioSource>();
     	anim = gameObject.GetComponent<Animation>();
+		script = menhir_map.GetComponent<menhir_map>();
+
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnMouseDown()
     {
-
-    }
+    	script.caillou_got_click(pierre_id);
+	}
 
     public void StartAnim()
     {
-    	anim.Play("pierre");
+    	//anim.Play("pierre");
     }
 
     public void PlaySong()
