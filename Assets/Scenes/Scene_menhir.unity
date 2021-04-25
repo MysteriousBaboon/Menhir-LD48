@@ -908,6 +908,7 @@ GameObject:
   - component: {fileID: 1102648977}
   - component: {fileID: 1102648979}
   - component: {fileID: 1102648980}
+  - component: {fileID: 1102648981}
   m_Layer: 0
   m_Name: pierre
   m_TagString: Untagged
@@ -1090,6 +1091,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_MyAudioSource: {fileID: 0}
   pierre_id: 1
+  MenhirMap: {fileID: 815321997}
+--- !u!61 &1102648981
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1102648976}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.28, y: 1.28}
+    newSize: {x: 1.28, y: 1.28}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.28, y: 1.28}
+  m_EdgeRadius: 0
 --- !u!1 &1173833711
 GameObject:
   m_ObjectHideFlags: 0
@@ -1757,8 +1785,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1838698115}
   - component: {fileID: 1838698114}
-  - component: {fileID: 1838698116}
   - component: {fileID: 1838698117}
+  - component: {fileID: 1838698116}
+  - component: {fileID: 1838698118}
   m_Layer: 0
   m_Name: pierre (2)
   m_TagString: Untagged
@@ -1845,6 +1874,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_MyAudioSource: {fileID: 0}
   pierre_id: 3
+  MenhirMap: {fileID: 815321997}
 --- !u!82 &1838698117
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1941,6 +1971,32 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!61 &1838698118
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1838698113}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.28, y: 1.28}
+    newSize: {x: 1.28, y: 1.28}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.28, y: 1.28}
+  m_EdgeRadius: 0
 --- !u!1 &1903595383
 GameObject:
   m_ObjectHideFlags: 0
@@ -1951,8 +2007,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1903595386}
   - component: {fileID: 1903595385}
-  - component: {fileID: 1903595384}
   - component: {fileID: 1903595387}
+  - component: {fileID: 1903595388}
+  - component: {fileID: 1903595389}
   m_Layer: 0
   m_Name: pierre (1)
   m_TagString: Untagged
@@ -1960,20 +2017,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1903595384
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1903595383}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20bc3499698ceda4e8661d07682bf1f5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_MyAudioSource: {fileID: 0}
-  pierre_id: 2
 --- !u!212 &1903595385
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2135,6 +2178,47 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1903595388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1903595383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20bc3499698ceda4e8661d07682bf1f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MyAudioSource: {fileID: 0}
+  pierre_id: 2
+  MenhirMap: {fileID: 815321997}
+--- !u!61 &1903595389
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1903595383}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.28, y: 1.28}
+    newSize: {x: 1.28, y: 1.28}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.28, y: 1.28}
+  m_EdgeRadius: 0
 --- !u!1 &2104017299
 GameObject:
   m_ObjectHideFlags: 0

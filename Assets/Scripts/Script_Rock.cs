@@ -2,24 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class caillou1 : MonoBehaviour
+public class Script_Rock : MonoBehaviour
 {
 	public AudioSource m_MyAudioSource;
 	private Animation anim;
 	public int pierre_id;
 
 
-	public GameObject menhir_map;
+	public GameObject MenhirMap;
 
-	menhir_map script;
+	Script_MenhirMap script;
 
     // Start is called before the first frame update
     void Start()
     {
     	m_MyAudioSource = GetComponent<AudioSource>();
     	anim = gameObject.GetComponent<Animation>();
-		script = menhir_map.GetComponent<menhir_map>();
-
+		script = MenhirMap.GetComponent<Script_MenhirMap>();
     }
 
     void OnMouseDown()

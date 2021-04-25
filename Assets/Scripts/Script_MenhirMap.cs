@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class menhir_map : MonoBehaviour
+public class Script_MenhirMap : MonoBehaviour
 {
 	public GameObject c1;
 	public GameObject c2;
@@ -10,11 +10,11 @@ public class menhir_map : MonoBehaviour
 
 	public GameObject menhir;
 
-	caillou1 s1;
-	caillou1 s2;
-	caillou1 s3;
+	Script_Rock s1;
+	Script_Rock s2;
+	Script_Rock s3;
 
-	ChangeSpriteFromSheet m;
+	Script_Menhir m;
 
 	int[] good_combinaison = {1, 3, 1, 2, 3, 3};
 	int good_combinaison_count = 0;
@@ -23,10 +23,10 @@ public class menhir_map : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-    	s1 = c1.GetComponent<caillou1>();
-		s2 = c2.GetComponent<caillou1>();
-		s3 = c3.GetComponent<caillou1>();
-		m = menhir.GetComponent<ChangeSpriteFromSheet>();
+    	s1 = c1.GetComponent<Script_Rock>();
+		s2 = c2.GetComponent<Script_Rock>();
+		s3 = c3.GetComponent<Script_Rock>();
+		m = menhir.GetComponent<Script_Menhir>();
     }
 
     // Update is called once per frame
@@ -50,7 +50,6 @@ public class menhir_map : MonoBehaviour
     		{
     			click_caillou(s3, 3);
     		}
-    		update_menhir();
     	}
     }
 
@@ -68,7 +67,7 @@ public class menhir_map : MonoBehaviour
 		}
     }
 
-    void click_caillou(caillou1 s, int id)
+    void click_caillou(Script_Rock s, int id)
     {
     	//if (!s.m_MyAudioSource.isPlaying)
 
@@ -88,6 +87,7 @@ public class menhir_map : MonoBehaviour
         {
         	victory = true;
         }
+        update_menhir();
     }
 
     public void	caillou_got_click(int id)

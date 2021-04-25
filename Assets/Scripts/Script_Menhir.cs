@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChangeSpriteFromSheet : MonoBehaviour
+public class Script_Menhir : MonoBehaviour
 {
 	public SpriteRenderer spriteRenderer;
 	public Sprite sprite1;
