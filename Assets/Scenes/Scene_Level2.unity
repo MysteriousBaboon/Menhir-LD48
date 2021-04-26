@@ -220,8 +220,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   material: {fileID: 2100000, guid: 8ba9bc42aeb98a262b2dd0d2dab918e2, type: 2}
-  softness: 0.09
-  radius: 0.6
+  softness: 0.4
+  radius: 0.65
 --- !u!1 &212372105
 GameObject:
   m_ObjectHideFlags: 0
@@ -338,8 +338,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57fb445f73bdb68e8a78954ca9b124f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: I...$I don't know where i am...$I don't understand...$what i am doing here...
-  time_between_letters: 0.25
+  text: What is this feeling...$This thing crawling inside me...$I'm scared$         
+    $help me...
+  time_between_letters: 0.15
   text_object: {fileID: 945449091}
   scene: Scene_menhir
 --- !u!114 &945449091
