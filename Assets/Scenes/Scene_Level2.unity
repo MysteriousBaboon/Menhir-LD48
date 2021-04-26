@@ -342,7 +342,7 @@ MonoBehaviour:
     $help me...
   time_between_letters: 0.15
   text_object: {fileID: 945449091}
-  scene: Scene_menhir
+  scene: Scene_Chest
 --- !u!114 &945449091
 MonoBehaviour:
   m_ObjectHideFlags: 0

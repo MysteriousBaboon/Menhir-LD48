@@ -3613,6 +3613,7 @@ GameObject:
   - component: {fileID: 1993196372}
   - component: {fileID: 1993196371}
   - component: {fileID: 1993196370}
+  - component: {fileID: 1993196373}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -3638,7 +3639,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.020692406, g: 0.11320752, b: 0.012281951, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -3651,10 +3652,10 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.01
   far clip plane: 1000
-  field of view: 60
-  orthographic: 1
+  field of view: 68
+  orthographic: 0
   orthographic size: 5
   m_Depth: -1
   m_CullingMask:
@@ -3685,6 +3686,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1993196373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1993196369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f27e56a62dd157958a1956558662ae0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 2100000, guid: 8ba9bc42aeb98a262b2dd0d2dab918e2, type: 2}
+  softness: 0.5
+  radius: 0.55
 --- !u!1 &2044419427
 GameObject:
   m_ObjectHideFlags: 0
