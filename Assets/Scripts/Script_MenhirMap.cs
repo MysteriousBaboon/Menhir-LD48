@@ -31,6 +31,7 @@ public class Script_MenhirMap : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Destroy(GameObject.FindWithTag("gameMenu"));
     	s1 = c1.GetComponent<Script_Rock>();
 		s2 = c2.GetComponent<Script_Rock>();
 		s3 = c3.GetComponent<Script_Rock>();
