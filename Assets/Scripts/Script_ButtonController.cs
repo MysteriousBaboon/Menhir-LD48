@@ -30,4 +30,9 @@ public class Script_ButtonController: MonoBehaviour
     {
 
     }
+
+    void Update()
+    {
+        GotoScene();
+    }
 }
