@@ -626,7 +626,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1097785561}
         m_TargetAssemblyTypeName: Script_ButtonController, Assembly-CSharp
-        m_MethodName: GotoScene
+        m_MethodName: ExitGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
