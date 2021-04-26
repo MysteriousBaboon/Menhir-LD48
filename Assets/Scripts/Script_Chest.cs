@@ -2,9 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.SceneManagement;
 
 public class Script_Chest : MonoBehaviour
 {
+    public string levelName;
+    public SpriteRenderer spriteRenderer;
+    public Sprite sprite1;
+    public Sprite sprite2;
+    public Sprite sprite3;
 
     public GameObject[] list;
     // Start is called before the first frame update
@@ -14,6 +20,13 @@ public class Script_Chest : MonoBehaviour
     public int var_p1 = 0;
     public float red, green, blue;
     int step = 0;
+    int life = 3;
+    bool waiting = false;
+
+    void Start()
+    {
+        spriteRenderer.sprite = sprite1;
+    }
 
     // Update is called once per frame
     void Update()
@@ -30,6 +43,10 @@ public class Script_Chest : MonoBehaviour
 
         //int mod = diff % 5;
         //int mod2 = diff2 % 5;
+        if (waiting)
+        {
+            return;
+        }
         int start_index;
         int limit_index;
         int increase_index;
@@ -142,22 +159,59 @@ public class Script_Chest : MonoBehaviour
                 else
                 {
                     print("il a loose");
+
+                    life--;
+                    if (life == 0)
+                    {
+                        SceneManager.LoadScene(levelName);
+                    }
+                    else if (life == 2)
+                    {
+                        spriteRenderer.sprite = sprite2;
+                    }
+                    else if (life == 1)
+                    {
+                        spriteRenderer.sprite = sprite3;
+                    }
+                    StartCoroutine(wait(2));
                 }
             }
         }
     }
 
-bool isWin()
-{
-    GameObject[] Gos = GameObject.FindGameObjectsWithTag("chest");
-
-    foreach (GameObject objet in Gos)
+    IEnumerator wait(int time)
     {
-        Color col = objet.GetComponent<SpriteRenderer>().color;
-        if ( col != new Color(0.5f, 0.2f, 0.9f)) return false;
+        waiting = true;
+        yield return new WaitForSecondsRealtime (time);
+        reset_level();
+        waiting = false;
     }
-    return true;
-}
+
+    bool isWin()
+    {
+        GameObject[] Gos = GameObject.FindGameObjectsWithTag("chest");
+
+        foreach (GameObject objet in Gos)
+        {
+            Color col = objet.GetComponent<SpriteRenderer>().color;
+            if ( col != new Color(0.5f, 0.2f, 0.9f)) return false;
+        }
+        return true;
+    }
+
+    void reset_level()
+    {
+        GameObject[] Gos = GameObject.FindGameObjectsWithTag("chest");
+        //Color Color_piece = new Color(0.0f, 0.0f, 0.0f);
+        int i = 0;
+        while (i < 25)
+        {
+            list[i].GetComponent<SpriteRenderer>().color = Color.white;
+            i ++;
+        }
+        last_index = 5;
+        step = 0;
+    }
 
 
 }
