@@ -86,7 +86,6 @@ public class Script_Chest : MonoBehaviour
                 start_index += 1;
             }
             change = true;
-
         }
 
         //diagonale
