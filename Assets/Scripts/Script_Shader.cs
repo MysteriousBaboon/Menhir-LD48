@@ -7,6 +7,7 @@ using UnityEngine;
 public class Script_Shader : MonoBehaviour
 {
       public Material material;
+      public float value;
 
   void OnRenderImage (RenderTexture source, RenderTexture destination) {
     Graphics.Blit(source, destination, material);
