@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class Script_MenhirMap : MonoBehaviour
 {
-    public AudioSource m_MyAudioSource;
 
 	public GameObject c1;
 	public GameObject c2;
@@ -16,6 +15,8 @@ public class Script_MenhirMap : MonoBehaviour
     public GameObject cr2;
     public GameObject cr3;
 
+    public GameObject music;
+
 	public GameObject menhir;
 
     public string levelName;
@@ -23,6 +24,8 @@ public class Script_MenhirMap : MonoBehaviour
 	Script_Rock s1;
 	Script_Rock s2;
 	Script_Rock s3;
+
+    StoneMusic s_music;
 
 	Script_Menhir m;
 
@@ -34,7 +37,7 @@ public class Script_MenhirMap : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        m_MyAudioSource = GetComponent<AudioSource>();
+        s_music = music.GetComponent<StoneMusic>();
         GameObject obj = GameObject.FindWithTag("music_main");
         if (obj != null)
         {
@@ -58,7 +61,7 @@ public class Script_MenhirMap : MonoBehaviour
         }
     	else if (victory & !s1.m_MyAudioSource.isPlaying & !s2.m_MyAudioSource.isPlaying & !s3.m_MyAudioSource.isPlaying & !end_music_started)
     	{
-            m_MyAudioSource.Play(0);
+            s_music.start_music();
             end_music_started = true;
     	}
     	else if (!victory)
@@ -94,9 +97,6 @@ public class Script_MenhirMap : MonoBehaviour
 
     void click_caillou(Script_Rock s, int id)
     {
-    	//if (!s.m_MyAudioSource.isPlaying)
-    	s.StartAnim();
-
     	s.PlaySong();
 
 		if (good_combinaison[good_combinaison_count] == id)
