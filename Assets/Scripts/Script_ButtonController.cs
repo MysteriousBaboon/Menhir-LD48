@@ -12,7 +12,7 @@ public class Script_ButtonController: MonoBehaviour
 
     public void GotoScene()
     {
-        SceneManager.LoadScene(levelName);
+SceneManager.LoadScene(levelName);
     }
 
     public void ExitGame()
@@ -29,10 +29,5 @@ public class Script_ButtonController: MonoBehaviour
     void Start()
     {
 
-    }
-
-    void Update()
-    {
-        GotoScene();
     }
 }
