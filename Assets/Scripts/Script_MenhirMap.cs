@@ -29,7 +29,6 @@ public class Script_MenhirMap : MonoBehaviour
 	int[] good_combinaison = {1, 3, 1, 2, 3, 3};
 	int good_combinaison_count = 0;
 	bool victory = false;
-    bool next_stage = false;
     bool end_music_started = false;
 
     // Start is called before the first frame update
@@ -53,13 +52,9 @@ public class Script_MenhirMap : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (next_stage)
+        if (end_music_started & Input.anyKey)
         {
             SceneManager.LoadScene(levelName);
-        }
-        else if (end_music_started & !m_MyAudioSource.isPlaying)
-        {
-            next_stage = true;
         }
     	else if (victory & !s1.m_MyAudioSource.isPlaying & !s2.m_MyAudioSource.isPlaying & !s3.m_MyAudioSource.isPlaying & !end_music_started)
     	{
