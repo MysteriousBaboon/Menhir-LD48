@@ -208,6 +208,7 @@ GameObject:
   - component: {fileID: 471887584}
   - component: {fileID: 471887583}
   - component: {fileID: 471887586}
+  - component: {fileID: 471887587}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -292,6 +293,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d869feefc427e41de80da1ad86410d47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< Updated upstream
   levelName: Scene_menhir
   volume: {fileID: 0}
 --- !u!1001 &2002698134
@@ -351,3 +353,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98e5b9f9740c92d839d918e25614ae20, type: 3}
+=======
+  cells:
+  - {fileID: 731435611}
+  - {fileID: 0}
+  max_cells: 2
+--- !u!114 &471887587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 471887582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d869feefc427e41de80da1ad86410d47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelName: 
+  volume: {fileID: 0}
+--- !u!1 &731435611 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 139536259550518446, guid: b700bff8bdffbbd2bb613e06d72fdf32, type: 3}
+  m_PrefabInstance: {fileID: 254381382}
+  m_PrefabAsset: {fileID: 0}
+>>>>>>> Stashed changes
