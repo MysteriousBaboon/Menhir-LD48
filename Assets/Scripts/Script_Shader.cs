@@ -7,7 +7,15 @@ using UnityEngine;
 public class Script_Shader : MonoBehaviour
 {
       public Material material;
-      public float value;
+      public float softness;
+      public float radius;
+
+      void Start()
+      {
+        material.SetFloat("_VSoft", softness);
+        material.SetFloat("_VRadius", radius);
+
+      }
 
   void OnRenderImage (RenderTexture source, RenderTexture destination) {
     Graphics.Blit(source, destination, material);

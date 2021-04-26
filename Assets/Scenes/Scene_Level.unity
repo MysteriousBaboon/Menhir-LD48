@@ -220,6 +220,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   material: {fileID: 2100000, guid: 8ba9bc42aeb98a262b2dd0d2dab918e2, type: 2}
+  softness: 0.09
+  radius: 0.6
 --- !u!1 &212372105
 GameObject:
   m_ObjectHideFlags: 0
