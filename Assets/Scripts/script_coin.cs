@@ -21,7 +21,7 @@ public class script_coin : MonoBehaviour
     void OnMouseDown()
     {
         GameObject controller = GameObject.FindGameObjectWithTag("controller");
-        controller.GetComponent<go_coffre>().passIndex(index);
+        controller.GetComponent<Script_Chest>().passIndex(index);
     }
 }
 
