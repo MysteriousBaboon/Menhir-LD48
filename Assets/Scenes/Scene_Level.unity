@@ -338,7 +338,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57fb445f73bdb68e8a78954ca9b124f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: I...$I don't know where i am...$I don't understand...$what i am doing here...
+  text: I...$I don't know where i am...$I don't understand...$what am i doing here...
   time_between_letters: 0.25
   text_object: {fileID: 945449091}
   scene: Scene_menhir
