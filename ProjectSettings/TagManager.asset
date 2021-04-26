@@ -5,7 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - shadows
-
+  - music_main
   layers:
   - Default
   - TransparentFX
@@ -14,8 +14,8 @@ TagManager:
   - Water
   - UI
   - 
-  - tricks
-  - invisible
+  - 
+  - 
   - 
   - 
   - 
@@ -40,9 +40,6 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: invisible
-    uniqueID: 1871624235
-    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

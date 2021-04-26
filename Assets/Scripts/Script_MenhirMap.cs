@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class Script_MenhirMap : MonoBehaviour
 {
+    public AudioSource m_MyAudioSource;
+
 	public GameObject c1;
 	public GameObject c2;
 	public GameObject c3;
@@ -27,11 +29,18 @@ public class Script_MenhirMap : MonoBehaviour
 	int[] good_combinaison = {1, 3, 1, 2, 3, 3};
 	int good_combinaison_count = 0;
 	bool victory = false;
+    bool next_stage = false;
+    bool end_music_started = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        Destroy(GameObject.FindWithTag("gameMenu"));
+        m_MyAudioSource = GetComponent<AudioSource>();
+        GameObject obj = GameObject.FindWithTag("music_main");
+        if (obj != null)
+        {
+            Destroy(obj);
+        }
     	s1 = c1.GetComponent<Script_Rock>();
 		s2 = c2.GetComponent<Script_Rock>();
 		s3 = c3.GetComponent<Script_Rock>();
@@ -44,9 +53,18 @@ public class Script_MenhirMap : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-    	if (victory & !s1.m_MyAudioSource.isPlaying & !s2.m_MyAudioSource.isPlaying & !s3.m_MyAudioSource.isPlaying)
-    	{
+        if (next_stage)
+        {
             SceneManager.LoadScene(levelName);
+        }
+        else if (end_music_started & !m_MyAudioSource.isPlaying)
+        {
+            next_stage = true;
+        }
+    	else if (victory & !s1.m_MyAudioSource.isPlaying & !s2.m_MyAudioSource.isPlaying & !s3.m_MyAudioSource.isPlaying & !end_music_started)
+    	{
+            m_MyAudioSource.Play(0);
+            end_music_started = true;
     	}
     	else if (!victory)
     	{
