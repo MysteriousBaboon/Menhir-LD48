@@ -59,9 +59,8 @@ public class Script_MenhirMap : MonoBehaviour
         {
             SceneManager.LoadScene(levelName);
         }
-    	else if (victory & !s1.m_MyAudioSource.isPlaying & !s2.m_MyAudioSource.isPlaying & !s3.m_MyAudioSource.isPlaying & !end_music_started)
+    	else if (victory & !s3.m_MyAudioSource.isPlaying & !end_music_started)
     	{
-            s_music.start_music();
             end_music_started = true;
     	}
     	else if (!victory)
@@ -115,6 +114,8 @@ public class Script_MenhirMap : MonoBehaviour
         }
         if (good_combinaison_count == good_combinaison.Length)
         {
+            s_music.start_music();
+
         	victory = true;
         }
         update_menhir();

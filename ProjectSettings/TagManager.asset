@@ -6,6 +6,9 @@ TagManager:
   tags:
   - shadows
   - music_main
+  - chest
+  - controller
+  - music
   layers:
   - Default
   - TransparentFX

@@ -20,11 +20,17 @@ public class Script_Chest : MonoBehaviour
     public int var_p1 = 0;
     public float red, green, blue;
     int step = 0;
-    int life = 3;
+    int life = 40;
     bool waiting = false;
 
     void Start()
     {
+        GameObject obj = GameObject.FindWithTag("music");
+        if (obj != null)
+        {
+            Destroy(obj);
+        }
+
         spriteRenderer.sprite = sprite1;
     }
 
@@ -153,7 +159,7 @@ public class Script_Chest : MonoBehaviour
             {
                 if(isWin())
                 {
-                    print("Il a win");
+                    SceneManager.LoadScene("Scene_Ending");
                 }
                 
                 else
